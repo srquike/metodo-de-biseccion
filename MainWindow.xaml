@@ -38,7 +38,7 @@
                     <DataGridTextColumn Binding="{Binding Fa}" Header="f(a)" CanUserSort="False"/>
                     <DataGridTextColumn Binding="{Binding Fxr}" Header="f(Xr)" CanUserSort="False"/>
                     <DataGridTextColumn Binding="{Binding Fafxr}" Header="f(a)*f(Xr)" CanUserSort="False"/>
-                    <DataGridTextColumn Binding="{Binding Error}" Header="Error" CanUserSort="False"/>
+                    <DataGridTextColumn Binding="{Binding Error, StringFormat={}{0:N3}}" Header="Error" CanUserSort="False"/>
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>

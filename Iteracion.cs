@@ -6,6 +6,8 @@ namespace MetodoDeBiseccion
 {
     class Iteracion
     {
+        private double error;
+
         public int I { get; set; }
         public double A { get; set; }
         public double B { get; set; }
@@ -13,7 +15,6 @@ namespace MetodoDeBiseccion
         public double Fa { get; set; }
         public double Fxr { get; set; }
         public double Fafxr { get; set; }
-        public double Error { get; set; }
-        public bool IsSolucion { get; set; }
+        public double Error { get => Math.Round(error, 3); set => error = value; }
     }
 }

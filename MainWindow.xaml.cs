@@ -75,20 +75,18 @@ namespace MetodoDeBiseccion
                         }
 
                         iteracion.Xr = (iteracion.A + iteracion.B) / 2;
-                        iteracion.Error = Math.Abs(100 * (iteracion.Xr - iteracionAnterior.Xr) / iteracion.Xr);
                     }
 
                     iteracion.Fa = Math.Sin(iteracion.A) + (2 * iteracion.A) - 1;
                     iteracion.Fxr = Math.Sin(iteracion.Xr) + (2 * iteracion.Xr) - 1;
                     iteracion.Fafxr = iteracion.Fa * iteracion.Fxr;
+                    iteracion.Error = Math.Abs(100 * (iteracion.Xr - iteracionAnterior.Xr) / iteracion.Xr);
 
                     iteracionAnterior = iteracion;
-
+                    iteraciones.Add(iteracion);
                     i++;
 
-                    iteraciones.Add(iteracion);
-
-                } while (Math.Round(iteracion.Error, 3) != error);
+                } while (iteracion.Error != 0.001 && iteracion.Error != 0);
 
                 DgIteraciones.ItemsSource = iteraciones;
             }
